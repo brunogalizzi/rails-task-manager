@@ -1,0 +1,15 @@
+<div class="container mx-3">
+  <h1 class="my-4"><%= @task.title + ' ' + (@task.completed ? '✅' : '❌')%></h1>
+
+  <p class="mx-4"><%= @task.details %></p>
+  <%= simple_form_for(@task) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.input :completed %>
+   <div class="list-inline"><%= f.button_button t(".save"), name: "change_task", class: "btn btn-primary" %>
+  <% end %>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <a href="../tasks/<%= @task.id %>" >Back</a>
+
+  </form>
+</div>

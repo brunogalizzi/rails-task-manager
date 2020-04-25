@@ -1,0 +1,16 @@
+<div class="container mx-3">
+  <h1 class="my-4"><%= @task.title + ' ' + (@task.completed ? '✅' : '❌')%><%=(link_to '🗑', destroy_path(@task), method: :delete, data: {confirm: "Are you sure?"}, style: "text-decoration: none")%></h1>
+
+  <p class="mx-4"><%= @task.details %></p>
+
+  <div>
+    <form action="complete_task/<%= @task.id %>">
+    <input type="submit" value="Mark as complete/incomplete">
+  </div>
+  <br>
+  <a href="edit/<%= @task.id %>">Change</a>
+  <br>
+  <a href="../tasks" >Back</a>
+
+  </form>
+</div>

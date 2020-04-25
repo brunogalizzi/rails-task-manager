@@ -1,0 +1,8 @@
+<%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.input :completed %>
+ <div class="list-inline"><%= f.button_button t(".submit"), name: "submit", class: "btn btn-primary" %>
+<% end %>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="../tasks" >Back</a></div>

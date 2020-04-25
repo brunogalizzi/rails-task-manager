@@ -1,0 +1,9 @@
+<div class="container my-4 mx-3">
+  <h1>My Tasks</h1>
+  <ul id="tasks" style="list-style: none;">
+    <% @tasks.each do |task| %>
+      <li> <%=(task.completed ? '✅' : '❌')%><%=(link_to task.title, task_path(task)) %><%=(link_to '🗑', destroy_path(task), method: :delete, data: {confirm: "Are you sure?"}, style: "text-decoration: none")%></li>
+    <% end %>
+  </ul>
+  <a href="/tasks/new_task">Add a new task</a>
+</div>
